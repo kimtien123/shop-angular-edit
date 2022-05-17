@@ -29,16 +29,29 @@ export class OrderService {
         })
       );
   }
-
+  public getAllOrders() {
+    return this.authService.user
+      .pipe(
+        switchMap((user) => {
+          if (user) {
+            const remoteUserOrders = `/orders`;
+            return this.store.list(remoteUserOrders).valueChanges();
+          } else {
+            return of(null);
+          }
+        })
+      );
+  }
   public addUserOrder(order: Order, total: number, user: string) {
     const orderWithMetaData = {
       ...order,
       ...this.constructOrderMetaData(order),
-      total
+      total,
+      user
     };
 
     const databaseOperation = this.store
-      .list(`users/${user}/orders`)
+      .list(`/orders`)
       .push(orderWithMetaData)
       .then((response) => response, (error) => error);
 

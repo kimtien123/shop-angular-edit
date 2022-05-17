@@ -7,7 +7,7 @@
 // stylelint-disable selector-no-qualifying-type
 
 .shopping-cart {
-  margin-bottom: floor($grid-vertical-step / 1.2); //~20px
+  margin-bottom: floor(($grid-vertical-step) / 1.2); //~20px
   .table { margin-bottom: 0; }
   .btn { margin: 0; }
   > table > thead > tr,
@@ -67,7 +67,7 @@
       }
     }
     .product-title {
-      margin-bottom: floor($grid-vertical-step / 4);
+      margin-bottom: floor(($grid-vertical-step) / 4);
       padding-top: 5px;
       font: {
         size: $font-size-base;

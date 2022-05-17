@@ -9,10 +9,12 @@ import { take ,  takeUntil ,  switchMap, map } from 'rxjs/operators';
 
 import { MessageService } from '../../messages/message.service';
 import { User, Roles } from '../../models/user.model';
+import { Order } from '../../models/order.model';
 
 @Injectable()
 export class AuthService {
   public user: Observable<User>;
+  public orders: Observable<Order>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -26,8 +28,6 @@ export class AuthService {
             return this.db.object('users/' + auth.uid).valueChanges()
               .pipe(
                 map((user: User) => {
-                  console.log('user1', user);
-                  console.log('auth', auth);
                   return {
                     email: auth.email,
                     firstName: auth.displayName,
@@ -44,6 +44,7 @@ export class AuthService {
           }
         })
       );
+      
   }
 
   public googleLogin() {
@@ -146,6 +147,9 @@ export class AuthService {
             ref.update(userData);
           });
     });
+  }
+
+  public getOrderFromDb(){
 
   }
 }

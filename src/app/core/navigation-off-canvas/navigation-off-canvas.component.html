@@ -205,6 +205,13 @@
           </a>
         </span>
       </li>
+      <li *ngIf="user" routerLinkActive="active">
+        <span>
+          <a routerLink="/order-list" (click)="onNavigationClick()">
+            <span>Orders List</span>
+          </a>
+        </span>
+      </li>
       <li routerLinkActive="active">
         <span>
           <a routerLink="/home" (click)="onNavigationClick()">

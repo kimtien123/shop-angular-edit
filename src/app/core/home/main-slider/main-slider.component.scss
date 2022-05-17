@@ -9,7 +9,7 @@
 // Hero Slider
 .hero-slider {
   width: 100%;
-  min-height: $hero-slider-min-height;
+  max-height: $hero-slider-min-height;
   background: {
     position: center;
     color: $gray-lighter;
@@ -19,7 +19,7 @@
   overflow: hidden;
 
   @media (max-width: 1100px) {
-    min-height: $hero-slider-min-height - 150;
+    max-height: $hero-slider-min-height - 150;
   }
 }
 

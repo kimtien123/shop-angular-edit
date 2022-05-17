@@ -3,10 +3,12 @@ import { AddEditComponent } from './add-edit/add-edit.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from '../products/products.module';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
     declarations: [
-        AddEditComponent
+        AddEditComponent,
+        OrderListComponent
     ],
     imports: [
         SharedModule,
