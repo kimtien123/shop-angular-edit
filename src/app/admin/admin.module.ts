@@ -8,6 +8,7 @@ import { OrderListComponent } from './order-admin/order-list/order-list.componen
 import { OrderItemComponent } from './order-admin/order-list/order-item/order-item.component';
 import { OrderDetailComponent } from './order-admin/order-detail/order-detail.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { AppRoutingModule } from '../app-routing.module';
         FormsModule,
         ReactiveFormsModule,
         ProductsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NgxPaginationModule
     ],
     exports: [
         SharedModule,

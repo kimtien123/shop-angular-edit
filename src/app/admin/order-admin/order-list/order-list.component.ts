@@ -10,6 +10,7 @@ import { Order } from "../../../models/order.model";
 })
 export class OrderListComponent implements OnInit {
   orderList: Order[];
+  p: number = 1;
   private ordersSubscription: Subscription;
   productsLoading: boolean;
   constructor(public orderService: OrderService) {}

@@ -3,11 +3,12 @@
     <div class="col-sm-12">
       <div class="list-group">
         <app-order-item
-          *ngFor="let orderItem of orderList; let i = index"
+          *ngFor="let orderItem of orderList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index"
           [order]="orderItem"
           [index]="i"
         >
         </app-order-item>
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
   </div>
