@@ -14,7 +14,6 @@ import { Order } from '../../models/order.model';
 @Injectable()
 export class AuthService {
   public user: Observable<User>;
-  public orders: Observable<Order>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -29,9 +28,7 @@ export class AuthService {
               .pipe(
                 map((user: User) => {
                   return {
-                    email: auth.email,
-                    firstName: auth.displayName,
-                    lastName: auth.displayName,
+                    ...user,
                     roles: {
                       admin: auth.email === 'huynhthikimtien123@gmail.com'
                     },
@@ -147,9 +144,5 @@ export class AuthService {
             ref.update(userData);
           });
     });
-  }
-
-  public getOrderFromDb(){
-
   }
 }

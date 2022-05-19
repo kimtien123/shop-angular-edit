@@ -33,7 +33,7 @@
           <ul *ngIf="user" class="toolbar-dropdown">
             <li class="sub-menu-user">
               <div class="user-info">
-                <h6 class="user-name">{{ user.email }}
+                <h6 class="user-name">{{ user.firstName + " " +user.lastName }}
                   <span *ngIf="user.roles.admin"> (Admin)</span>
                 </h6>
               </div>
@@ -42,7 +42,7 @@
               <a routerLink="/account/profile" href="">My Profile</a>
             </li>
             <li>
-              <a routerLink="/account/orders" href="">Orders List</a>
+              <a routerLink="/account/orders" href="">My Orders</a>
             </li>
             <li class="sub-menu-separator"></li>
             <li>

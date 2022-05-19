@@ -1,0 +1,20 @@
+<a
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-1"
+>
+  <div  style="width: 100%;">
+    <div class="d-inline-flex justify-content-between" style="width: 100%;">
+      <h5 class="list-group-item-text">{{ order.numberOrder }}</h5>
+      <span class="text-info">
+        {{ order.status }}
+      </span>
+    </div>
+
+    <p class="list-group-item-text" style="margin: 0">
+      {{ order.date | date:'medium' }}
+    </p>
+  </div>
+  <span> </span>
+</a>

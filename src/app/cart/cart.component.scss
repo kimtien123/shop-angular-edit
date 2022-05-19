@@ -238,7 +238,7 @@
       &:last-child { text-align: center; }
       .btn {
         width: 100%;
-        margin: floor($grid-vertical-step / 2) 0 !important;
+        margin: floor(($grid-vertical-step) / 2) 0 !important;
       }
     }
   }

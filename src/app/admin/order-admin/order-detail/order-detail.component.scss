@@ -1,0 +1,25 @@
+.title-order-detail,
+p {
+  padding: 0;
+  margin: 0px;
+}
+.sub-title {
+  align-items: center;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.shipping-info {
+  text-align: right;
+}
+table {
+  border: 1px solid #cecece;
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #cecece;
+}

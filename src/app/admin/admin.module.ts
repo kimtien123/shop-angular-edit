@@ -3,18 +3,26 @@ import { AddEditComponent } from './add-edit/add-edit.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from '../products/products.module';
-import { OrderListComponent } from './order-list/order-list.component';
+import { OrderAdminComponent } from './order-admin/order-admin.component';
+import { OrderListComponent } from './order-admin/order-list/order-list.component';
+import { OrderItemComponent } from './order-admin/order-list/order-item/order-item.component';
+import { OrderDetailComponent } from './order-admin/order-detail/order-detail.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
     declarations: [
         AddEditComponent,
-        OrderListComponent
+        OrderListComponent,
+        OrderItemComponent,
+        OrderDetailComponent,
+        OrderAdminComponent
     ],
     imports: [
         SharedModule,
         FormsModule,
         ReactiveFormsModule,
-        ProductsModule
+        ProductsModule,
+        AppRoutingModule
     ],
     exports: [
         SharedModule,

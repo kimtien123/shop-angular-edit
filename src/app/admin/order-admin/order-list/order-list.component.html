@@ -1,0 +1,13 @@
+<div class="row padding-top-2x" style="margin-left: 50px;">
+  <div class="row" style="width: 145%;">
+    <div class="col-sm-12">
+      <div class="list-group">
+        <app-order-item
+          *ngFor="let orderItem of orderList; let i = index"
+          [order]="orderItem"
+          [index]="i"
+        >
+        </app-order-item>
+      </div>
+    </div>
+  </div>

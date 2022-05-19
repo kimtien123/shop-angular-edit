@@ -14,7 +14,8 @@ import { AccountComponent } from "./account/account.component";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
 import { ProductDetailComponent } from "./products/product-detail/product-detail.component";
 import { CompleteComponent } from "./checkout/complete/complete.component";
-import { OrderListComponent } from "./admin/order-list/order-list.component";
+import { OrderAdminComponent } from "./admin/order-admin/order-admin.component";
+import { OrderDetailComponent } from "./admin/order-admin/order-detail/order-detail.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -28,7 +29,11 @@ const routes: Routes = [
     component: AddEditComponent,
     canActivate: [AdminGuard],
   },
-  { path: "order-list", component: OrderListComponent },
+  {
+    path: "order-admin",
+    component: OrderAdminComponent,
+    children: [{ path: ":id", component: OrderDetailComponent }],
+  },
   { path: "checkout", component: CheckoutComponent },
   { path: "register-login", component: RegisterLoginComponent },
   {
