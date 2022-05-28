@@ -76,6 +76,16 @@
         </div>
 
         <div class="form-group row">
+          <label class="col-2 col-form-label" for="amount">Amount</label>
+          <div class="col-10">
+            <input class="form-control form-control-square form-control-sm" formControlName="amount" type="number" id="amount" value="">
+            <div *ngIf="!productForm.get('amount').valid && productForm.get('amount').touched" class="form-control-feedback">
+              Shucks, enter a price for your product.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
           <label class="col-2 col-form-label" for="price-normal">Original Price</label>
           <div class="col-10">
             <input class="form-control form-control-square form-control-sm" formControlName="priceNormal" type="number" id="price-normal"

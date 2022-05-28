@@ -78,7 +78,11 @@ export class AddEditComponent implements OnInit, OnDestroy {
       priceNormal: new FormControl(this.product && this.product.priceNormal, [
         Validators.required,
         Validators.min(0)
-      ])
+      ]),
+      amount: new FormControl(this.product && this.product.amount, [
+        Validators.required,
+        Validators.min(0)
+      ]), 
     });
     this.onFormChanges();
   }

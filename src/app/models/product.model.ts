@@ -9,6 +9,7 @@ export class Product {
     public price: number = 0,
     public priceNormal: number = 0,
     public reduction: number = 0,
+    public amount: number = 0,
     public imageURLs: string[] = [],
     public imageRefs: string[] = [],
     public categories: {} = {},

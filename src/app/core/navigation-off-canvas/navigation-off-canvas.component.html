@@ -205,7 +205,7 @@
           </a>
         </span>
       </li>
-      <li *ngIf="user" routerLinkActive="active">
+      <li  *ngIf="user && user?.roles?.admin" routerLinkActive="active">
         <span>
           <a routerLink="/order-admin" (click)="onNavigationClick()">
             <span>Orders List</span>
