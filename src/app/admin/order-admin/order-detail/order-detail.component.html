@@ -74,15 +74,18 @@
       </table>
       <div style="display: flex; justify-content: end">
         <button
+          [disabled]="order?.status == 'Finished'"
           class="btn btn-primary"
           (click)="
             onUpdateStatus(
-              order.numberOrder,
+              order.number,
               order?.status == 'In Progress'
                 ? 'Confirm'
                 : order?.status == 'Confirm'
                 ? 'Shipping'
-                : 'Finished'
+                : order?.status == 'Shipping'
+                ? 'Finished'
+                : 'Done'
             )
           "
         >
@@ -91,10 +94,18 @@
               ? "Confirm"
               : order?.status == "Confirm"
               ? "Shipping"
-              : "Finished"
+              : order?.status == "Shipping"
+              ? "Finished"
+              : "Done"
           }}
         </button>
-        <button class="btn btn-danger">Cancel</button>
+
+        <button
+          class="btn btn-danger"
+          (click)="onUpdateStatus(order.number, 'Cancel')"
+        >
+          Cancel
+        </button>
       </div>
     </div>
   </div>

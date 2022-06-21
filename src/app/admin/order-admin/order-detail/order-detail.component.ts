@@ -31,8 +31,9 @@ export class OrderDetailComponent implements OnInit {
     
   }
 
-  onUpdateStatus(index: number, newStatus: string) {
+  onUpdateStatus(index: string, newStatus: string) {
     this.orderSubscription.unsubscribe();
     this.orderService.updateStatusOrder(index, newStatus);
+    this.orderSubscription.unsubscribe();
   }
 }

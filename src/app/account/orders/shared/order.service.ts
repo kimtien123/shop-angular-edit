@@ -114,8 +114,8 @@ export class OrderService {
     };
   }
 
-  public updateStatusOrder(index: number, newStatus: string) {
-    return this.store.list('/orders', ref => ref.orderByChild('numberOrder').equalTo(index)).snapshotChanges()
+  public updateStatusOrder(index: string, newStatus: string) {
+    return this.store.list('/orders', ref => ref.orderByChild('number').equalTo(index)).snapshotChanges()
     .subscribe(actions => {
         actions.forEach(action => {
           // here you get the key

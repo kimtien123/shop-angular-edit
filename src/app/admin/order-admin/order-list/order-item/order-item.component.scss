@@ -8,4 +8,11 @@
     cursor: pointer;
     pointer-events: none;
   }
+  .list-group-item-text{
+    .text-info{
+      &.active{
+        color: #fff; 
+      }
+    }
+  }
 }
