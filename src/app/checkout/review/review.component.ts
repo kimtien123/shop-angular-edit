@@ -63,7 +63,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
   }
   private createId(order: Order): string {
     const randomId = Math.floor(Math.random() * new Date().getTime());
-    let id = order.numberOrder || randomId;
+    let id = order.number || randomId;
     if (id === 1) {
       id = randomId;
     }
@@ -73,20 +73,19 @@ export class ReviewComponent implements OnInit, OnDestroy {
     const userUid = this.user ? this.user.uid : false;
     const order = this.checkoutService.getOrderInProgress();
     const total = this.cartService.getTotal();
-    const numberOrder = this.createId(order);
 
     this.checkoutService.setOrderItems(this.cartService.getItems());
 
     if (userUid) {
-      this.submitUserOrder(order, total, userUid, numberOrder);
+      this.submitUserOrder(order, total, userUid);
     } else {
-      this.submitAnonOrder(order, total, numberOrder);
+      this.submitAnonOrder(order, total);
     }
   }
 
-  private submitUserOrder(order, total, userUid, numberOrder) {
+  private submitUserOrder(order, total, userUid) {
     this.orderService
-      .addUserOrder(order, total, userUid, numberOrder)
+      .addUserOrder(order, total, userUid)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (response) => {
@@ -100,9 +99,9 @@ export class ReviewComponent implements OnInit, OnDestroy {
       );
   }
 
-  private submitAnonOrder(order, total, numberOrder) {
+  private submitAnonOrder(order, total) {
     this.orderService
-      .addAnonymousOrder(order, total, numberOrder)
+      .addAnonymousOrder(order, total)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (response) => {

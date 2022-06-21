@@ -8,7 +8,7 @@
     .padding-top-#{$i}x {
       padding-top: floor($grid-vertical-step * $i) !important;
       @media (max-width: $screen-md) {
-        padding-top: floor(($grid-vertical-step * $i) / 1.5) !important;
+        padding-top: calc(($grid-vertical-step * $i) / 1.5) !important;
       }
     }
   }

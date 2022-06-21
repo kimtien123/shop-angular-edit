@@ -56,13 +56,12 @@ export class OrderService {
       })
     );
   }
-  public addUserOrder(order: Order, total: number, user: string, numberOrder: string) {
+  public addUserOrder(order: Order, total: number, user: string) {
     const orderWithMetaData = {
       ...order,
       ...this.constructOrderMetaData(order),
       total,
-      user,
-      numberOrder
+      user
     };
 
     const databaseOperation = this.store
@@ -76,12 +75,11 @@ export class OrderService {
     return fromPromise(databaseOperation);
   }
 
-  public addAnonymousOrder(order: Order, total: number, numberOrder: string) {
+  public addAnonymousOrder(order: Order, total: number) {
     const orderWithMetaData = {
       ...order,
       ...this.constructOrderMetaData(order),
-      total,
-      numberOrder
+      total
     };
 
     const databaseOperation = this.store
