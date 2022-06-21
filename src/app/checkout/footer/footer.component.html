@@ -15,5 +15,8 @@
     <button *ngIf="buttons.includes('completeOrder')" class="btn btn-primary" href="" (click)="onCompleteOrder($event)">
       <span class="hidden-xs-down">Complete Order</span><span class="d-sm-none">Complete</span>
     </button>
+    <button *ngIf="buttons.includes('completePaypalOrder')" class="btn btn-primary btn-checkout-paypal" href="" (click)="onCompletePaypalOrder($event)">
+      <span class="hidden-xs-down">Checkout Paypal</span><span class="d-sm-none">Complete</span>
+    </button>
   </div>
 </div>

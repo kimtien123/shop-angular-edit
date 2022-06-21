@@ -11,6 +11,7 @@ export class FooterComponent {
   @Output() back: EventEmitter<void> = new EventEmitter<void>();
   @Output() continue: EventEmitter<void> = new EventEmitter<void>();
   @Output() completeOrder: EventEmitter<void> = new EventEmitter<void>();
+  @Output() completePaypalOrder: EventEmitter<void> = new EventEmitter<void>();
 
   onBack(e: Event) {
     this.back.emit();
@@ -22,5 +23,9 @@ export class FooterComponent {
 
   onCompleteOrder(e: Event) {
     this.completeOrder.emit();
+  }
+
+  onCompletePaypalOrder(e: Event) {
+    this.completePaypalOrder.emit();
   }
 }
