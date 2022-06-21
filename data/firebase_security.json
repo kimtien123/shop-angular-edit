@@ -19,7 +19,7 @@
     },
     "promos": {
       ".read": true,
-      ".write": "auth != null && root.child('users/' + auth.uid + '/roles/admin').exists() && root.child('users/' + auth.uid + '/roles/admin').val() === true",
+      ".write": "auth != null && root.child('users/' + auth.uid + '/roles/admin').exists() && root.child('users/' + auth.uid + '/roles/admin').val() === true"
     },
     "featured": {
       ".read": true,

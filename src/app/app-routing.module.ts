@@ -16,6 +16,8 @@ import { ProductDetailComponent } from "./products/product-detail/product-detail
 import { CompleteComponent } from "./checkout/complete/complete.component";
 import { OrderAdminComponent } from "./admin/order-admin/order-admin.component";
 import { OrderDetailComponent } from "./admin/order-admin/order-detail/order-detail.component";
+import { AddEditCategoryComponent } from './admin/category/add-edit/add-edit.component';
+import { CategoryListComponent } from './admin/category/category-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -24,10 +26,17 @@ const routes: Routes = [
   { path: "products/:id", component: ProductDetailComponent },
   { path: "cart", component: CartComponent },
   { path: "admin/add", component: AddEditComponent, canActivate: [AdminGuard] },
+  { path: "admin/category/add", component: AddEditCategoryComponent, canActivate: [] },
+  { path: "admin/category/list", component: CategoryListComponent, canActivate: [] },
   {
     path: "admin/edit/:id",
     component: AddEditComponent,
     canActivate: [AdminGuard],
+  },
+  {
+    path: "admin/category/edit/:id",
+    component: AddEditCategoryComponent,
+    canActivate: [],
   },
   {
     path: "order-admin",

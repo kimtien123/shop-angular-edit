@@ -1,0 +1,52 @@
+<app-page-title title="Add/Edit Category" [children]="[{title: 'Add/Edit Category'}]"></app-page-title>
+
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-lg-8">
+      <h2 class="margin-bottom-1x">Add/Edit Category</h2>
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="name">Name</label>
+          <div class="col-10">
+            <input class="form-control form-control-square form-control-sm" formControlName="name" type="text" id="name" value="">
+            <div *ngIf="!categoryForm.get('name').valid && categoryForm.get('name').touched" class="form-control-feedback">
+              Shucks, enter a name for your product.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="date-input">Creation Date</label>
+          <div class="col-10">
+            <input class="form-control" type="date" id="date-input" formControlName="date" value="">
+            <div *ngIf="!categoryForm.get('date').valid && categoryForm.get('date').touched" class="form-control-feedback">
+              Shucks, enter a date for your category.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="description">Description</label>
+          <div class="col-10">
+            <textarea class="form-control form-control-square form-control-sm" formControlName="description" id="description" rows="5">
+            </textarea>
+            <div *ngIf="!categoryForm.get('description').valid && categoryForm.get('description').touched" class="form-control-feedback">
+              Shucks, enter a description for your category.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row mb-5">
+          <div class="col text-right">
+            <button [disabled]="(mode === 'add')" class="btn btn-danger" type="button" (click)="onDelete()">Delete category</button>
+            <button [disabled]="categoryForm.invalid" class="btn btn-primary" type="submit">Save Changes</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { ProductService } from '../../products/shared/product.service';
 import { ProductsCacheService } from '../../products/shared/products-cache.service';
 
 import { Product } from '../../models/product.model';
+import { CategoryService } from '../../account/category/shared/category.service';
 
 // we send and receive categories as {key:true},
 // but for the input field we need
@@ -32,11 +33,13 @@ export class AddEditComponent implements OnInit, OnDestroy {
   public mode: 'edit' | 'add';
   public id;
   public percentage: Observable<number>;
+  public categories = [];
 
   constructor(
     private router: Router,
     public route: ActivatedRoute,
     private productService: ProductService,
+    private CategoryService: CategoryService,
     public fileUploadService: FileUploadService,
     private productsCacheService: ProductsCacheService,
     private log: MessageService
@@ -44,6 +47,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.setProduct();
+    this.CategoryService.getCategories().subscribe((values) => {
+      this.categories = values;
+    });
   }
 
   private initForm() {
@@ -82,7 +88,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       amount: new FormControl(this.product && this.product.amount, [
         Validators.required,
         Validators.min(0)
-      ]), 
+      ]),
     });
     this.onFormChanges();
   }

@@ -9,6 +9,9 @@ import { OrderItemComponent } from './order-admin/order-list/order-item/order-it
 import { OrderDetailComponent } from './order-admin/order-detail/order-detail.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CategoryListComponent } from './category/category-list.component';
+import { CategoryItemComponent } from './category/category-item/category-item.component';
+import { AddEditCategoryComponent } from './category/add-edit/add-edit.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +19,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
         OrderListComponent,
         OrderItemComponent,
         OrderDetailComponent,
-        OrderAdminComponent
+        OrderAdminComponent,
+        CategoryListComponent,
+        CategoryItemComponent,
+        AddEditCategoryComponent
     ],
     imports: [
         SharedModule,
