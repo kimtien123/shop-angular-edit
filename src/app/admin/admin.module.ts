@@ -12,6 +12,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryListComponent } from './category/category-list.component';
 import { CategoryItemComponent } from './category/category-item/category-item.component';
 import { AddEditCategoryComponent } from './category/add-edit/add-edit.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserItemComponent } from './user-list/user-item/user-item.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import { AddEditCategoryComponent } from './category/add-edit/add-edit.component
         OrderAdminComponent,
         CategoryListComponent,
         CategoryItemComponent,
-        AddEditCategoryComponent
+        AddEditCategoryComponent,
+        UserListComponent,
+        UserItemComponent
     ],
     imports: [
         SharedModule,

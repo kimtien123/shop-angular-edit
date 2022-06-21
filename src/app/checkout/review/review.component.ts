@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
@@ -14,20 +14,19 @@ import { CartItem } from '../../models/cart-item.model';
 import { Customer } from '../../models/customer.model';
 import { Order } from '../../models/order.model';
 import { User } from '../../models/user.model';
-
 @Component({
   selector: 'app-checkout-review',
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit, OnDestroy {
+
   items: CartItem[];
   total: number;
   customer: Customer;
   paymentMethod: string;
   unsubscribe$ = new Subject();
   user: User;
-
 
   constructor(
     private cartService: CartService,
@@ -82,6 +81,8 @@ export class ReviewComponent implements OnInit, OnDestroy {
     }
   }
 
+
+//Nút thanh toán paypal
   public onCompletePaypalOrder() {
     const userUid = this.user ? this.user.uid : false;
     const order = this.checkoutService.getOrderInProgress();

@@ -1,0 +1,16 @@
+<h2 class="text-center padding-top-1x">User Account List</h2>
+<div class="row padding-top-1x" style="margin-left: 50px;">
+    <div class="row" style="width: 145%;">
+      <div class="col-sm-12">
+        <div class="list-group">
+          <app-user-item
+            *ngFor="let cateItem of UserList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index"
+            [user]="cateItem"
+            [index]="i"
+          >
+          </app-user-item>
+          <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  

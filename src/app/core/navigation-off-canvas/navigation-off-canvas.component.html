@@ -235,12 +235,17 @@
       </li>
       <li *ngIf="user && user?.roles?.admin" routerLinkActive="active">
         <a routerLink="/admin/category/list" (click)="onNavigationClick()">
-          <span>Lisgt Category</span>
+          <span>Category List</span>
         </a>
       </li>
       <li *ngIf="user && user?.roles?.admin" routerLinkActive="active">
         <a routerLink="/admin/category/add" (click)="onNavigationClick()">
           <span>Add Category</span>
+        </a>
+      </li>
+      <li *ngIf="user && user?.roles?.admin" routerLinkActive="active">
+        <a routerLink="/admin/user/list" (click)="onNavigationClick()">
+          <span>User List</span>
         </a>
       </li>
       <li *ngIf="user && user?.roles?.admin" routerLinkActive="active">

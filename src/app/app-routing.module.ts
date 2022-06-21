@@ -18,6 +18,7 @@ import { OrderAdminComponent } from "./admin/order-admin/order-admin.component";
 import { OrderDetailComponent } from "./admin/order-admin/order-detail/order-detail.component";
 import { AddEditCategoryComponent } from './admin/category/add-edit/add-edit.component';
 import { CategoryListComponent } from './admin/category/category-list.component';
+import { UserListComponent } from "./admin/user-list/user-list.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: "admin/add", component: AddEditComponent, canActivate: [AdminGuard] },
   { path: "admin/category/add", component: AddEditCategoryComponent, canActivate: [] },
   { path: "admin/category/list", component: CategoryListComponent, canActivate: [] },
+  { path: "admin/user/list", component: UserListComponent, canActivate: [] },
   {
     path: "admin/edit/:id",
     component: AddEditComponent,

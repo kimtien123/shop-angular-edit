@@ -8,6 +8,7 @@ import { Order } from "../../../models/order.model";
   templateUrl: "./order-list.component.html",
   styleUrls: ["./order-list.component.scss"],
 })
+
 export class OrderListComponent implements OnInit {
   orderList: Order[];
   p: number = 1;

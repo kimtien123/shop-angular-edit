@@ -8,6 +8,7 @@ import { MessageService } from "../../../messages/message.service";
 import { AuthService } from "../../shared/auth.service";
 import { Category } from '../../../models/category.model';
 import { Product } from '../../../models/product.model';
+import { User } from "../../../models/user.model";
 
 @Injectable({
   providedIn: "root",
@@ -31,6 +32,12 @@ export class CategoryService {
         .pipe(map((arr) => arr.reverse()), catchError(this.handleError<Category[]>(`getCategories`)));
   }
 
+  public getUsers() {
+    return this.angularFireDatabase
+        .list<User>('/users', (ref) => ref.orderByChild('email'))
+        .valueChanges()
+        .pipe(map((arr) => arr.reverse()), catchError(this.handleError<User[]>(`getUsers`)));
+  }
 
   public addCategory(category: Category) {
     console.log('categorycategory', category);
