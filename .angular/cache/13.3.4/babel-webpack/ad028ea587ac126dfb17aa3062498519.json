@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Category {\n  constructor(id = 1, date = new Date().toISOString().split('T')[0], name = '', description = '') {\n    this.id = id;\n    this.date = date;\n    this.name = name;\n    this.description = description;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

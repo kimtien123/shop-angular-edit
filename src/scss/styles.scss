@@ -81,6 +81,6 @@
 
 
 // Layout
-@import 'layout/section';
-@import 'layout/header';
-@import 'layout/offcanvas-menu';
+@import '~layout/section.scss';
+@import '~layout/header.scss';
+@import '~layout/offcanvas-menu.scss';

@@ -8,7 +8,7 @@ export class Order {
     public items: CartItem[] = null,
     public total: number = null,
     public status: string = '',
-    public numberOrder: string = '',
+    public number: string = '',
     public date: string = new Date().toISOString().split('T')[0],
     public shippingMethod: string = '',
     public paymentMethod: string = '',
