@@ -59,5 +59,10 @@
     </ul>
   </div>
 </div>
+<ng-container *ngIf='paymentMethod == "Prepayment"'>
+  <app-checkout-footer [buttons]="['back', 'completeOrder']" (back)="onBack()" (completeOrder)="onCompleteOrder()"></app-checkout-footer>
+</ng-container>
+<ng-container *ngIf='paymentMethod == "Paypal"'>
+  <app-checkout-footer [buttons]="['back', 'completePaypalOrder']" (back)="onBack()" (completePaypalOrder)="onCompletePaypalOrder()"></app-checkout-footer>
+</ng-container>
 
-<app-checkout-footer [buttons]="['back', 'completeOrder']" (back)="onBack()" (completeOrder)="onCompleteOrder()"></app-checkout-footer>

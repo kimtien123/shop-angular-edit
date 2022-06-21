@@ -75,7 +75,20 @@ export class ReviewComponent implements OnInit, OnDestroy {
     const total = this.cartService.getTotal();
 
     this.checkoutService.setOrderItems(this.cartService.getItems());
+    if (userUid) {
+      this.submitUserOrder(order, total, userUid);
+    } else {
+      this.submitAnonOrder(order, total);
+    }
+  }
 
+  public onCompletePaypalOrder() {
+    const userUid = this.user ? this.user.uid : false;
+    const order = this.checkoutService.getOrderInProgress();
+    const total = this.cartService.getTotal();
+    const numberOrder = this.createId(order);
+
+    this.checkoutService.setOrderItems(this.cartService.getItems());
     if (userUid) {
       this.submitUserOrder(order, total, userUid);
     } else {
